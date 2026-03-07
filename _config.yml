@@ -1,16 +1,20 @@
-title: "ServiceNow Notes"
+title: "Bon's ServiceNow Notes"
+tagline: "ServiceNow architecture, scripts, and troubleshooting notes"
 description: "ServiceNow architecture, scripts, and troubleshooting notes"
-theme: minima
-markdown: kramdown
 
-minima:
-  skin: auto
-  nav_pages:
-    - about.md
+lang: ko-KR
+timezone: Australia/Perth
+
+url: "https://bonlab.github.io"   # 여기는 본인 주소로 변경
+baseurl: ""
+
+theme: minima
+remote_theme: "cotes2020/jekyll-theme-chirpy"
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
 
-header_pages:
-  - about.md
+github:
+  username: bonnow   # 본인 GitHub username으로 변경

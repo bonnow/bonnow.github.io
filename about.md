@@ -1,10 +1,8 @@
 ---
 layout: page
-title: About
+title: About / 소개
 permalink: /about/
 ---
-
-# About / 소개
 
 안녕하세요. 이 블로그는 **Bon**의 ServiceNow 기술 아카이브입니다.  
 실무에서 경험한 아키텍처, 구현 방법, 스크립트, 트러블슈팅 내용을 정리하고 공유하기 위해 만들었습니다.

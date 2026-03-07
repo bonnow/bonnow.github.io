@@ -1,12 +1,16 @@
 title: "Bon's ServiceNow Notes"
 description: "ServiceNow architecture, scripts, and troubleshooting notes"
-theme: jekyll-theme-cayman
+theme: minima
 markdown: kramdown
+
+minima:
+  skin: auto
+  nav_pages:
+    - about.md
+
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 header_pages:
   - about.md
-
-show_downloads: false
-google_analytics:

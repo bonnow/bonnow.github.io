@@ -6,11 +6,10 @@ categories: [servicenow, record]
 tags: [comments, worknotes, delete, history]
 ---
 
-# How to delete Comments or Work notes from a record
-
 Tags: delete comments worknotes
 
 ---
+<br>
 
 1. Right-click on the record and select **Copy URL to Clipboard** to obtain the unique sys_id of the record.
 For example: https://<instancename>service-now.com/nav_to.do?uri=incident.do?sys_id=85befb1c4a34bb12013b216a9fd5fee8

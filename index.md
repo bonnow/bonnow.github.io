@@ -35,10 +35,3 @@ title: Home
   </article>
 {% endfor %}
 </div>
-
----
-
-## About
-
-이 블로그는 ServiceNow 실무에서 정리한 아키텍처, 구현 방법, 스크립트, 트러블슈팅 기록을 공유하는 공간입니다.  
-This blog shares ServiceNow architecture notes, implementation ideas, scripts, and troubleshooting records.

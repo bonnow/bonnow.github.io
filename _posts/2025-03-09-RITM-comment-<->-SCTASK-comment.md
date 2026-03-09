@@ -1,7 +1,9 @@
-# [Br] RITM comment ↔ SCTASK comment
-
-Tags: comment copy auto
-
+---
+layout: post
+title: "RITM comment ↔ SCTASK comment"
+date: 2026-03-09 10:00:00 +0800
+categories: [servicenow, korean, platform]
+tags: [requested item, catalog task, copy, comment, auto, korean]
 ---
 
 !! Business Rule을 생성해야 합니다.

@@ -8,7 +8,8 @@ timezone: Australia/Perth
 url: "https://bonlab.github.io"   # 여기는 본인 주소로 변경
 baseurl: ""
 
-theme: minima
+# theme: minima
+theme: jekyll-theme-chirpy
 
 plugins:
   - jekyll-remote-theme

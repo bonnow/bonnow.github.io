@@ -5,3 +5,7 @@
 - type: linkedin
   icon: 'fab fa-linkedin'
   url: 'https://www.linkedin.com/in/bonseung-g-9a604318a/'
+
+- type: youtube
+  icon: 'fab fa-youtube'
+  url: 'https://www.youtube.com/channel/UCcWVP8-zbvaIGy-4EMhElww'

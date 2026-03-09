@@ -22,7 +22,7 @@ title: Home
 </div>
 
 <div style="margin-bottom: 20px;">
-  <input type="text" id="searchInput" placeholder="문서 제목 검색..." style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px;">
+  <input type="text" id="searchInput" placeholder="Search article" style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px;">
 </div>
 
 <div id="tagContainer" style="margin-bottom: 30px;">

@@ -10,7 +10,6 @@ Created with the Business rule.
 <img width="1447" height="992" alt="image" src="https://github.com/user-attachments/assets/3e50fd07-a6f0-4ebc-869c-f086cebe06f6" />
 
 
-[ Script ]
 ```javascript
 (function executeRule(current /* sys_email */ , previous /* null */ ) {
     var targetTable = (current.target_table + '').trim();
@@ -31,9 +30,7 @@ Created with the Business rule.
     // 원본 첨부(파일형)도 필요하면 같이 복사
     GlideSysAttachment.copy('sys_email', current.sys_id, targetTable, targetSysId);
 
-
 })(current, previous);
-
 
 function resolveUserToEmail(userVal) {
     if (!userVal) return '';

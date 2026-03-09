@@ -11,7 +11,6 @@ Created with the Business rule.
 
 
 [ Script ]
-
 ```javascript
 (function executeRule(current /* sys_email */ , previous /* null */ ) {
     var targetTable = (current.target_table + '').trim();

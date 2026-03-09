@@ -21,7 +21,6 @@ title: Home
   </div>
 </div>
 
-
 <div style="margin-bottom: 20px;">
   <input type="text" id="searchInput" placeholder="문서 제목 검색..." style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px;">
 </div>
@@ -35,24 +34,32 @@ title: Home
   {% endfor %}
 </div>
 
-<ul class="post-list" id="postList">
+<h2>Latest Posts</h2>
+<div class="post-list-grid" id="postGrid">
   {% for post in site.posts %}
-    <li class="post-item" data-title="{{ post.title | downcase }}" data-tags="{{ post.tags | join: ',' }}">
-      <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
-      <h3>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h3>
-    </li>
+    <article class="post-card" data-title="{{ post.title | downcase }}" data-tags="{{ post.tags | join: ',' }}">
+      <div class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</div>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      
+      {% if post.tags.size > 0 %}
+        <div style="font-size: 0.85em; color: #666; margin-bottom: 10px;">
+          🏷️ {{ post.tags | join: ', ' }}
+        </div>
+      {% endif %}
+
+      {% if post.excerpt %}
+        <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+      {% endif %}
+      <a class="read-more" href="{{ post.url | relative_url }}">Read more →</a>
+    </article>
   {% endfor %}
-</ul>
+</div>
 
 <script>
-  // 1. 검색 기능
+  // 검색 기능 (.post-card를 타겟팅하도록 수정)
   document.getElementById('searchInput').addEventListener('keyup', function() {
     let query = this.value.toLowerCase();
-    let posts = document.querySelectorAll('.post-item');
+    let posts = document.querySelectorAll('.post-card');
     
     posts.forEach(post => {
       let title = post.getAttribute('data-title');
@@ -64,12 +71,14 @@ title: Home
     });
   });
 
-  // 2. 태그 필터링 기능
+  // 태그 필터링 기능 (.post-card를 타겟팅하도록 수정)
   function filterPosts(selectedTag) {
-    let posts = document.querySelectorAll('.post-item');
+    let posts = document.querySelectorAll('.post-card');
     
     posts.forEach(post => {
-      let tags = post.getAttribute('data-tags').split(',');
+      let tagsString = post.getAttribute('data-tags');
+      let tags = tagsString ? tagsString.split(',') : [];
+      
       if (selectedTag === 'all' || tags.includes(selectedTag)) {
         post.style.display = '';
       } else {
@@ -78,18 +87,3 @@ title: Home
     });
   }
 </script>
-
-## Latest Posts
-
-<div class="post-list-grid">
-{% for post in site.posts limit:9 %}
-  <article class="post-card">
-    <div class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</div>
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-    {% if post.excerpt %}
-      <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
-    {% endif %}
-    <a class="read-more" href="{{ post.url | relative_url }}">Read more →</a>
-  </article>
-{% endfor %}
-</div>

@@ -5,10 +5,6 @@ date: 2026-03-07 10:00:00 +0800
 categories: [servicenow, record]
 tags: [comments, worknotes, delete, history]
 ---
-<head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4686581910223707"
-     crossorigin="anonymous"></script>
-</head>
 <br>
 
 1. Right-click on the record and select **Copy URL to Clipboard** to obtain the unique sys_id of the record.

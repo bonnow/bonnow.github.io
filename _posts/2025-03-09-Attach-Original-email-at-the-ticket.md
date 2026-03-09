@@ -9,7 +9,6 @@ Created with the Business rule.
 
 <img width="1447" height="992" alt="image" src="https://github.com/user-attachments/assets/3e50fd07-a6f0-4ebc-869c-f086cebe06f6" />
 
-
 ```javascript
 (function executeRule(current /* sys_email */ , previous /* null */ ) {
     var targetTable = (current.target_table + '').trim();

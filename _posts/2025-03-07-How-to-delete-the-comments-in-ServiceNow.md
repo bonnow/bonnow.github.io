@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to delete Comments or Work notes from a record"
-date: 2026-03-07
+date: 2026-03-07 10:00:00 +0800
 categories: [servicenow, record]
 tags: [comments, worknotes, delete, history]
 ---

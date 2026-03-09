@@ -18,3 +18,9 @@ plugins:
 
 github:
   username: bonnow   # 본인 GitHub username으로 변경
+
+avatar: "https://avatars.githubusercontent.com/u/bonnow"
+
+social:
+  name: Bon
+  github: bonnow

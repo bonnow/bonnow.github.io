@@ -7,7 +7,8 @@ tags: [inbound, email, attachment, original]
 ---
 Created with the Business rule.
 
-![image.png](image.png)
+<img width="1447" height="992" alt="image" src="https://github.com/user-attachments/assets/6c7f7f51-9bc4-48c8-b7ca-1e731d40eee5" />
+
 
 [ Script ]
 

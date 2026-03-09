@@ -6,18 +6,6 @@ categories: [servicenow, record]
 tags: [comments, worknotes, delete, history]
 ---
 
-{% if page.tags.size > 0 %}
-  <div class="post-tags" style="margin-bottom: 20px;">
-    <strong>Labels: </strong>
-    {% for tag in page.tags %}
-      <span style="background: #eee; padding: 3px 8px; border-radius: 4px; font-size: 0.85em; margin-right: 5px;">
-        {{ tag }}
-      </span>
-    {% endfor %}
-  </div>
-{% endif %}
-
----
 <br>
 
 1. Right-click on the record and select **Copy URL to Clipboard** to obtain the unique sys_id of the record.

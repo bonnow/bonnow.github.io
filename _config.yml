@@ -5,7 +5,7 @@ description: "ServiceNow architecture, scripts, and troubleshooting notes"
 lang: en-US
 timezone: Australia/Perth
 
-url: "https://bonlab.github.io"   # 여기는 본인 주소로 변경
+url: "https://bonnow.github.io"   # 여기는 본인 주소로 변경
 baseurl: ""
 
 # theme: minima

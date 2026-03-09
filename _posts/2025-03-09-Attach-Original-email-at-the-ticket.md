@@ -12,7 +12,7 @@ Created with the Business rule.
 
 [ Script ]
 
-```jsx
+```javascript
 (function executeRule(current /* sys_email */ , previous /* null */ ) {
     var targetTable = (current.target_table + '').trim();
     var targetSysId = (current.instance + '').trim();

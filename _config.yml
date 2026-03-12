@@ -1,11 +1,11 @@
-title: "Bon's Notes"
+title: "Bon's Note"
 tagline: "ServiceNow architecture, scripts, and troubleshooting notes"
 description: "ServiceNow architecture, scripts, and troubleshooting notes"
 
 lang: en-US
 timezone: Australia/Perth
 
-url: "https://bonnow.github.io"   # 여기는 본인 주소로 변경
+url: "https://bonnow.github.io"
 baseurl: ""
 
 # theme: minima
@@ -18,7 +18,7 @@ plugins:
   - jekyll-archives
 
 github:
-  username: bonnow   # 본인 GitHub username으로 변경
+  username: bonnow
 
 avatar: "https://github.com/bonnow.png"
 

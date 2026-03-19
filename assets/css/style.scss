@@ -173,11 +173,16 @@ pre {
 }
 
 blockquote {
-  background: #131820;
-  border-left: 4px solid var(--accent);
-  padding: 0.9rem 1rem;
-  color: #d7deea;
-  border-radius: 8px;
+  // background: #131820;
+  // border-left: 4px solid var(--accent);
+  // padding: 0.9rem 1rem;
+  // color: #d7deea;
+  // border-radius: 8px;
+  border-left: 3px solid #007aff; /* 깔끔한 파란색 포인트 */
+  background: #f8f9fa;
+  font-style: normal;
+  color: #555;
+  font-size: 0.95rem;
 }
 
 table {

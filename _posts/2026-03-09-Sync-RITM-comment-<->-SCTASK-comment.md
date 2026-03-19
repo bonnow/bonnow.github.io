@@ -97,6 +97,8 @@ By default, comments made by an end-user on the RITM are not visible to the fulf
 ---
 
 ## 1. RITM comments → SCTASK comments
+<img width="1376" height="788" alt="Untitled" src="https://github.com/user-attachments/assets/32a54121-85d1-4064-9802-cdae2afd036b" />
+<img width="1375" height="413" alt="Untitled (1)" src="https://github.com/user-attachments/assets/2233c795-4cb3-41c0-9e5d-85df3d8997e9" />
 
 This configuration ensures that any update provided by the requester on the RITM is instantly shared with the fulfillers working on the SCTASKs.
 
@@ -129,6 +131,8 @@ current.requested_for == gs.getUserID()
 ---
 
 ## 2. SCTASK comments → RITM comments
+<img width="1379" height="777" alt="Untitled (2)" src="https://github.com/user-attachments/assets/4f423572-4129-4017-a2dd-0f43c07ad279" />
+<img width="1370" height="371" alt="Untitled (3)" src="https://github.com/user-attachments/assets/1ab13c34-af1b-4a3f-a53a-6762d660a081" />
 
 When a fulfiller adds a comment to an SCTASK, it needs to be pushed up to the parent RITM so the end-user can see the progress.
 

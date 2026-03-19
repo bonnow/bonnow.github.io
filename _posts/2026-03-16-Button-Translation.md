@@ -96,9 +96,8 @@ By default, comments made by an end-user on the RITM are not visible to the fulf
 
 ---
 
-## 1. RITM comments → SCTASK comments
-<img width="1376" height="788" alt="Untitled" src="https://github.com/user-attachments/assets/32a54121-85d1-4064-9802-cdae2afd036b" />
-<img width="1375" height="413" alt="Untitled (1)" src="https://github.com/user-attachments/assets/2233c795-4cb3-41c0-9e5d-85df3d8997e9" />
+## System Localization > Translated Name / Fields
+<img width="1387" height="324" alt="Untitled" src="https://github.com/user-attachments/assets/e81f1741-5acf-483b-93bd-8a66625dd472" />
 
 This configuration ensures that any update provided by the requester on the RITM is instantly shared with the fulfillers working on the SCTASKs.
 

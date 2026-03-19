@@ -1,14 +1,16 @@
 ---
 layout: post
-title: "RITM comment ↔ SCTASK comment"
+title: "Sync RITM comment ↔ SCTASK comment"
 date: 2026-03-09 10:00:00 +0800
 categories: [servicenow platform, korean]
 tags: [requested item, catalog task, copy, comment, auto, korean]
 ---
 
 !! Business Rule을 생성해야 합니다.
+!! Need to create Business Rule.
 
 적용시키면 end user가 적는 comment가 sctask에도 적히고, 실무자가 적는 comment가 ritm에 적힙니다.
+After configuration, end user's comment (which sits in RITM) will be written in SCTASK, and vice versa.
 
 1. RITM comments → SCTASK comments
     

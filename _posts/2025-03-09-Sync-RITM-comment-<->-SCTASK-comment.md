@@ -11,16 +11,15 @@ In ServiceNow, keeping communication synchronized between the **Requested Item (
 
 By default, comments made by an end-user on the RITM are not visible to the fulfiller on the Task, and vice versa. This post covers how to automate this synchronization using **Business Rules**.
 
-> **KR:** *RITM(요청자)과 SCTASK(실무자) 간의 커뮤니케이션을 원활하게 하기 위해, 한쪽에서 작성된 코멘트가 다른 쪽으로 자동 복사되도록 Business Rule을 설정하는 방법입니다.*
-{: .prompt-info }
+**KR:** *RITM(요청자)과 SCTASK(실무자) 간의 커뮤니케이션을 원활하게 하기 위해, 한쪽에서 작성된 코멘트가 다른 쪽으로 자동 복사되도록 Business Rule을 설정하는 방법입니다.*
 {: .style="color: #888; font-size: 0.9em;"}
 ---
 
 ## 1. RITM comments → SCTASK comments
 This configuration ensures that any update provided by the requester on the RITM is instantly shared with the fulfillers working on the SCTASKs.
 
-> **KR:** *요청자가 RITM에 남기는 코멘트를 하위의 모든 SCTASK로 자동 복사합니다.*
-{: .prompt-info }{: .style="color: #888; font-size: 0.9em;"}
+**KR:** *요청자가 RITM에 남기는 코멘트를 하위의 모든 SCTASK로 자동 복사합니다.*
+{: .style="color: #888; font-size: 0.9em;"}
 
 ![RITM Configuration](https://github.com/user-attachments/assets/56a75305-5c84-4417-baf6-8f63c5aa36d7)
 ![RITM Detail](https://github.com/user-attachments/assets/33e584c6-8bf6-41e2-a09e-49e3fff9a956)
@@ -47,9 +46,9 @@ current.requested_for == gs.getUserID()
 
 
 ## 2. SCTASK comments → RITM comments
-When a fulfiller adds a comment to an SCTASK, it needs to be pushed up to the parent RITM so the end-user can see the progress.
-> **KR:** *Fulfiller가 SCTASK에 남기는 코멘트를 상위의 RITM로 자동 복사합니다.*
-{: .prompt-info }{: .style="color: #888; font-size: 0.9em;"}
+When a fulfiller adds a comment to an SCTASK, it needs to be pushed up to the parent RITM so the end-user can see the progress.<br/>
+**KR:** *Fulfiller가 SCTASK에 남기는 코멘트를 상위의 RITM로 자동 복사합니다.*
+{: .style="color: #888; font-size: 0.9em;"}
     
 <img width="1379" height="777" alt="Untitled 2" src="https://github.com/user-attachments/assets/a9a2722a-1b66-4166-a9f7-a3fd8bbe0ce8" />
 

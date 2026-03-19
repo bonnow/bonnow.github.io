@@ -6,11 +6,15 @@ categories: [servicenow platform]
 tags: [requested item, catalog task, copy, comment, auto]
 ---
 
-!! Business Rule을 생성해야 합니다.
+!! Business Rule을 생성해야 합니다.<br/>
 !! Need to create Business Rule.
 
-적용시키면 end user가 적는 comment가 sctask에도 적히고, 실무자가 적는 comment가 ritm에 적힙니다.
+<br/>
+
+적용시키면 end user가 적는 comment가 sctask에도 적히고, 실무자가 적는 comment가 ritm에 적힙니다.<br/>
 After configuration, end user's comment (which sits in RITM) will be written in SCTASK, and vice versa.
+
+<br/>
 
 1. RITM comments → SCTASK comments
     

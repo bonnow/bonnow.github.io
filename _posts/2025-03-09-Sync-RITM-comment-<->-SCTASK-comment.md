@@ -7,18 +7,20 @@ tags: [requested item, catalog task, copy, comment, auto]
 ---
 
 ## Introduction
-In ServiceNow, communication between the requester and the fulfiller is crucial. By default, comments on a **Requested Item (RITM)** are not automatically visible on the **Catalog Task (SCTASK)**, and vice versa. 
+In ServiceNow, keeping communication synchronized between the **Requested Item (RITM)** and its associated **Catalog Tasks (SCTASK)** is essential for a smooth fulfillment process. 
 
-This post explains how to create **Business Rules** to synchronize these comments, ensuring that both parties stay updated without switching records.
+By default, comments made by an end-user on the RITM are not visible to the fulfiller on the Task, and vice versa. This post covers how to automate this synchronization using **Business Rules**.
 
-> **요약:** RITM(요청자)과 SCTASK(실무자) 간의 커뮤니케이션을 돕기 위해 코멘트를 실시간으로 동기화하는 Business Rule 설정 방법입니다. 이 설정을 통해 요청자가 남긴 글은 실무자에게, 실무자가 남긴 글은 요청자에게 자동으로 전달됩니다.
-
+---
+*RITM(요청자)과 SCTASK(실무자) 간의 커뮤니케이션을 원활하게 하기 위해, 한쪽에서 작성된 코멘트가 다른 쪽으로 자동 복사되도록 Business Rule을 설정하는 방법입니다.*
+{: .style="color: #888; font-size: 0.9em;"}
 ---
 
 ## 1. RITM comments → SCTASK comments
 This configuration ensures that any update provided by the requester on the RITM is instantly shared with the fulfillers working on the SCTASKs.
 
-> **작업:** 요청자가 RITM에 남기는 코멘트를 하위의 모든 SCTASK로 자동 복사합니다.
+> **Note:** 요청자가 RITM에 남기는 코멘트를 하위의 모든 SCTASK로 자동 복사합니다.
+{: .prompt-info }
 
 ![RITM Configuration](https://github.com/user-attachments/assets/56a75305-5c84-4417-baf6-8f63c5aa36d7)
 ![RITM Detail](https://github.com/user-attachments/assets/33e584c6-8bf6-41e2-a09e-49e3fff9a956)

@@ -77,5 +77,5 @@ current.request_item.requested_for != gs.getUserID()
 ```
 
 ## Importance Notes
-Always ensure your **Conditions** are strictly defined to prevent recursion. Without the "gs.getUserID()" check, the two Business Rules might keep triggering each ohter, creating an infinite loop of comments.
-**KR:** *Warning: 무한 루프 방지를 위해 gs.getUserID()를 확용한 조건 설정이 필수입니다.*{: .style="color: #888; font-size: 0.9em;"}
+Always ensure your **Conditions** are strictly defined to prevent recursion. Without the "gs.getUserID()" check, the two Business Rules might keep triggering each ohter, creating an infinite loop of comments.<br/>
+**KR:** *Warning: 무한 루프 방지를 위해 gs.getUserID()를 확용한 조건 설정이 필수입니다.*{: .style="color: #888; font-size: 0.9em;"}<br

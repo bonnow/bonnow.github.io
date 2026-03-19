@@ -6,7 +6,7 @@ categories: [servicenow ITSM]
 tags: [reference, variable, attirbutes]
 ---
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/eeac1506-d405-4309-9e5b-c41bb3901858/Untitled.png)
+![u_oa](https://github.com/user-attachments/assets/e96a0eb3-cb12-49e6-a061-c3b835a31dd9)
 ### [ Variable Attributes ]
 ```javascript
 ref_auto_completer=AJAXTableCompleter,ref_ac_columns_search=true,ref_ac_columns=u_oa_type;assigned_to

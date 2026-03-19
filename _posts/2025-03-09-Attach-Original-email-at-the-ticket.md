@@ -2,8 +2,8 @@
 layout: post
 title: "Attach original email at the Ticket"
 date: 2026-03-09 10:00:00 +0800
-categories: [servicenow platform, english]
-tags: [inbound, email, attachment, original, english]
+categories: [servicenow platform]
+tags: [inbound, email, attachment, original]
 ---
 Created with the Business rule.
 

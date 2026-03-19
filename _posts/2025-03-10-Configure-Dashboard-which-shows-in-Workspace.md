@@ -7,7 +7,10 @@ tags: [workspace, dashboard, platform]
 ---
 <br/>
 Workspace에 보여지는 dashboard를 구성할때는 정해진 곳으로 가서 구성을 해야합니다.<br/>
+<details>
+<summary><b>한국어 설명 보기 (Click to expand)</b></summary>
 When you create the dashboard which shows in the Workspace, we need to create and configure it in the certain place.
+</details>
 
 <img width="1118" height="880" alt="Annotation 2026-03-10 132251" src="https://github.com/user-attachments/assets/5424d6ea-739d-4700-a42c-71b04ee3896f" />
 

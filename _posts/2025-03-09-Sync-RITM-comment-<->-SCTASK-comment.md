@@ -47,20 +47,19 @@ current.requested_for == gs.getUserID()
 
 ## 2. SCTASK comments → RITM comments
 When a fulfiller adds a comment to an SCTASK, it needs to be pushed up to the parent RITM so the end-user can see the progress.<br/>
-**KR:** *Fulfiller가 SCTASK에 남기는 코멘트를 상위의 RITM로 자동 복사합니다.*
-{: .style="color: #888; font-size: 0.9em;"}
+**KR:** *Fulfiller가 SCTASK에 남기는 코멘트를 상위의 RITM로 자동 복사합니다.*{: .style="color: #888; font-size: 0.9em;"}
     
 <img width="1379" height="777" alt="Untitled 2" src="https://github.com/user-attachments/assets/a9a2722a-1b66-4166-a9f7-a3fd8bbe0ce8" />
 
 <img width="1370" height="371" alt="Untitled 3" src="https://github.com/user-attachments/assets/f97510b5-7651-4c1b-9de4-d425e4756ed2" />
 
-[ Condition ]
+### [ Condition ]
 
 ```jsx
 current.request_item.requested_for != gs.getUserID()
 ```
 
-[ Script ]
+### [ Script ]
 
 ```jsx
 (function executeRule(current, previous /*null when async*/) {
@@ -76,3 +75,7 @@ current.request_item.requested_for != gs.getUserID()
 
 })(current, previous);
 ```
+
+## Importance Notes
+Always ensure your **Conditions** are strictly defined to prevent recursion. Without the "gs.getUserID()" check, the two Business Rules might keep triggering each ohter, creating an infinite loop of comments.
+**KR:** *Warning: 무한 루프 방지를 위해 gs.getUserID()를 확용한 조건 설정이 필수입니다.*{: .style="color: #888; font-size: 0.9em;"}

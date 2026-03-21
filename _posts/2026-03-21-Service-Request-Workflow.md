@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Service Request Framework"
+title: "Service Request Workflow"
 date: 2026-03-21 10:00:00 +0800
-categories: [servicenow itsm, korean]
-tags: [request, workflow, flow, framework, korean]
+categories: [servicenow itsm]
+tags: [request, workflow, flow, framework, service, request, framework]
 ---
 <style>
   .lang-switcher {

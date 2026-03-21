@@ -92,7 +92,7 @@ When managing ServiceNow, many teams create and maintain a separate flow for eac
 - The number of flows keeps increasing as more catalog item are added.
 
 - Even a small change has to be applied to multiple flows individually.
-- 
+
 - It becomes difficult for administrators to understand the overall Service Request flow at a glacnce.
 
 

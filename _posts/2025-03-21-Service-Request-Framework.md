@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Service Request Framework"
-date: 2026-03-17 10:00:00 +0800
+date: 2026-03-21 10:00:00 +0800
 categories: [servicenow itsm, korean]
 tags: [request, workflow, flow, framework, korean]
 ---
@@ -28,7 +28,6 @@ ServiceNow를 관리할때 catalog item의 flow를 item별 개별 flow를 만들
 
 Instead of creating and maintaining separate flows for each catalog item, I wanted to move the variability into configuration and keep the execution logic standardized.
 
-이 한 문장이 글의 중심이 됩니다.
 
 <hr/>
 
@@ -159,15 +158,11 @@ In the standardized model, the behavior is driven entirely by configuration reco
 <hr/>
 
 # 9. Trade-offs / Limitations
-
-
 	•	모든 케이스를 100% config로 일반화하기는 어려움
 	•	너무 복잡한 예외 로직은 별도 처리 필요
-	•	config table 설계가 부실하면 오히려 운영이 더 어려워질 수 있음
 	•	권한 관리와 테스트 전략이 중요함
 	•	디버깅 시 “설정 문제인지 로직 문제인지” 구분이 필요함
 
-이런 문장이 좋습니다.
 
 This approach does not eliminate complexity; it relocates complexity from multiple flows into a controlled configuration model.
 
@@ -205,6 +200,5 @@ Avoid this approach when:
 <hr/>
 
 # 12. Conclusion
-
 해당 구조는 Flow 개수를 줄이는 것이 목적이 아니라 Request fulfillment를 표준화 가능하고 운영 가능한 구조로 바꾸는 것이 목적이다.
 비슷한 Catalog Item이 많은 조직에서는 특히 효과적이다.

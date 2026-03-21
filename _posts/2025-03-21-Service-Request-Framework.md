@@ -194,7 +194,7 @@ If you have any question about the content, feel free to contact me on LinkedIn.
 
 </div>
 
-<div class="lang-kr" markdown="1">
+<div class="lang-ko" markdown="1">
 *해당 flow를 구현할때는 별도의 application scope을 활용하여 관리하시는 것을 권장드립니다.*
 
 ## 1. Intro

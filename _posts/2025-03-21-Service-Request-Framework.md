@@ -5,6 +5,7 @@ date: 2026-03-21 10:00:00 +0800
 categories: [servicenow itsm, korean]
 tags: [request, workflow, flow, framework, korean]
 ---
+
 <style>
   .lang-switcher {
     display: flex;
@@ -82,6 +83,7 @@ tags: [request, workflow, flow, framework, korean]
     }
   }
 </script>
+
 <div class="lang-en" markdown="1">
 *It is recommended to manage this flow by using a separate application scope.*
 

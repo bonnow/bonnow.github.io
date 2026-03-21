@@ -83,7 +83,7 @@ tags: [request, workflow, flow, framework, service, request, framework]
   }
 </script>
 <div class="lang-en" markdown="1">
-# Details of the SR workflow.
+Details of the SR workflow.
 
 <img width="1966" height="1365" alt="Screenshot 2026-03-21 at 14 36 23" src="https://github.com/user-attachments/assets/f8d778ca-e45f-407c-8c6e-f693a384e91a" />
 ## Properties
@@ -95,11 +95,55 @@ tags: [request, workflow, flow, framework, service, request, framework]
 <img width="1501" height="535" alt="image" src="https://github.com/user-attachments/assets/b8e5bc12-2a31-4808-b3cf-fd98beda50ec" />
 <img width="1501" height="260" alt="image" src="https://github.com/user-attachments/assets/eb2e6c80-1318-4420-aa1d-f4aefc9b74f9" />
 
+## 1. Check the SR AT Lines Records
+<img width="1502" height="686" alt="image" src="https://github.com/user-attachments/assets/7e75ef71-f3b1-4aed-8e26-b4a43364403c" />
+```javascript
+(function(current, workflow) {
+
+	workflow.scratchpad.srAtLines = [];
+	workflow.scratchpad.current = [];
+	workflow.scratchpad.now = {
+		'catalog_item':'',
+		'short_desc':'',
+		'desc':'',
+		'event':'',
+		'fields':'',
+		'groups':'',
+		'title':'',
+		'type':'',
+		'variables':'',
+		'assign_user':'',
+		'assign_group':'',
+		'business_service':'',
+		'service_offering':'',
+		'due_date':'',
+		'primary_worker':'',
+		'duplicate_approver':''
+	};
+	workflow.scratchpad.pre_line = [];
+
+	var gr = new GlideRecord('x_hap_sr_flow_sr_at_lines');
+	gr.addEncodedQuery('active=true^catalog_item='+current.cat_item.getValue()+'^ORDERBYorder');
+	gr.query();
+
+	while(gr.next()){
+		workflow.scratchpad.srAtLines.push({
+			'sysId' : gr.getUniqueValue(),
+			'order' : gr.getValue('order'),
+			'type' : gr.getValue('type')
+		});
+	}
+	
+})(current, workflow);
+```
+
+## 2. Check there are any lines in the same order
+<img width="1331" height="608" alt="image" src="https://github.com/user-attachments/assets/8bdf493e-8d44-498b-af68-97b0275b2b29" />
 
 
 </div>
 <div class="lang-ko" markdown="1">
-# SR workflow 세부 내용
+SR workflow 세부 내용
 
 <img width="1966" height="1365" alt="Screenshot 2026-03-21 at 14 36 23" src="https://github.com/user-attachments/assets/f8d778ca-e45f-407c-8c6e-f693a384e91a" />
 ## Properties

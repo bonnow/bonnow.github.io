@@ -207,3 +207,26 @@ table {
     padding: 1.2rem;
   }
 }
+
+/* Glightbox 스크롤 강제 차단 및 전체 화면 핏(Fit) */
+
+/* 1. 팝업을 감싸는 모든 껍데기의 스크롤(overflow)을 숨깁니다 */
+.glightbox-container, 
+.gslide, 
+.gslide-inner-content, 
+.gslide-media, 
+.gslide-image {
+    overflow: hidden !important; 
+    max-width: 100vw !important; /* 모니터 가로 최대치 제한 */
+    max-height: 100vh !important; /* 모니터 세로 최대치 제한 */
+}
+
+/* 2. 실제 이미지가 화면 비율에 맞춰서 꽉 차게(contain) 조절되도록 강제합니다 */
+.gslide-image img {
+    max-width: 100% !important; 
+    max-height: 100vh !important; 
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important; /* 비율 안 깨지고 화면에 다 들어오게 함 */
+    margin: 0 auto !important; /* 정중앙 배치 */
+}

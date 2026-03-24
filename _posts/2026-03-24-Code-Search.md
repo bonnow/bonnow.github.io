@@ -94,7 +94,7 @@ When we manage the ServiceNow, we sometimes suffer to find where is the code tha
 
 ## Example
 
-![image](https://github.com/user-attachments/assets/23f266d5-cdf9-4cf4-ae6b-2ceba0d0e46d)
+![image](https://github.com/user-attachments/assets/23f266d5-cdf9-4cf4-ae6b-2ceba0d0e46d#.png)
 
 For example someone who configured the system before, made a typo in the notification banner.
 
@@ -102,25 +102,25 @@ To find out where this error is.
 
 Easiest way is using the ServiceNow studio.
 
-![image](https://github.com/user-attachments/assets/9157a4e0-8d5a-463d-a8ff-f9bb8c9438a6)
+![image](https://github.com/user-attachments/assets/9157a4e0-8d5a-463d-a8ff-f9bb8c9438a6#.png)
 
 Search the Studio menu under the 'System Applications > Studio'.
 
-![image](https://github.com/user-attachments/assets/7040b7c5-8f9a-4029-91e9-a152fa93d332)
+![image](https://github.com/user-attachments/assets/7040b7c5-8f9a-4029-91e9-a152fa93d332#.png)
 
 In the Studio click any scope that is not restricted.
 
 In here, i clicked the 'ITSM Mobile Agent'.
 
-![image](https://github.com/user-attachments/assets/30c1c1a0-54bd-49c6-bd85-ae2233fe5263)
+![image](https://github.com/user-attachments/assets/30c1c1a0-54bd-49c6-bd85-ae2233fe5263#.png)
 
 Type **'Ctrl + Shift + F'** to see the search popup.
 
 Type the sentence which included in the code that you want to search and click 'Search in all applications'.
 
-![image](https://github.com/user-attachments/assets/52881a63-c983-4f1b-b123-3399e726b7ef)
+![image](https://github.com/user-attachments/assets/52881a63-c983-4f1b-b123-3399e726b7ef#.png)
 
-![image](https://github.com/user-attachments/assets/d3e949c4-3900-490d-989f-40e24d8b24b1)
+![image](https://github.com/user-attachments/assets/d3e949c4-3900-490d-989f-40e24d8b24b1#.png)
 
 You can see the search result and where this typo sits in.
 
@@ -136,31 +136,31 @@ ServiceNow를 관리할때, 특정 코드가 어디에 적혀있는지 찾는데
 
 ## Example
 
-![image](https://github.com/user-attachments/assets/23f266d5-cdf9-4cf4-ae6b-2ceba0d0e46d)
+![image](https://github.com/user-attachments/assets/23f266d5-cdf9-4cf4-ae6b-2ceba0d0e46d#.png)
 
 예를 들어서 과거의 누군가가 알림을 띄우는 것을 만들었는데, 해당 알림에 오타가 있어 고쳐야하는 경우
 
 이 오류가 어디있는지 찾기 가장 쉬운 방법은, ServiceNow Studio를 활용하는 것입니다.
 
-![image](https://github.com/user-attachments/assets/9157a4e0-8d5a-463d-a8ff-f9bb8c9438a6)
+![image](https://github.com/user-attachments/assets/9157a4e0-8d5a-463d-a8ff-f9bb8c9438a6#.png)
 
 'System Applications > Studio' 메뉴를 클릭합니다.
 
-![image](https://github.com/user-attachments/assets/7040b7c5-8f9a-4029-91e9-a152fa93d332)
+![image](https://github.com/user-attachments/assets/7040b7c5-8f9a-4029-91e9-a152fa93d332#.png)
 
 Studio에서 접근이 제한되어 있지 않은 scope 아무거나 선택합니다.
 
 여기서 저는 'ITSM Mobile Agent'를 선택했습니다.
 
-![image](https://github.com/user-attachments/assets/30c1c1a0-54bd-49c6-bd85-ae2233fe5263)
+![image](https://github.com/user-attachments/assets/30c1c1a0-54bd-49c6-bd85-ae2233fe5263#.png)
 
 **'Ctrl + Shift + F'**를 입력하여 검색창을 띄웁니다.
 
 찾으려고 하는 코드에 들어있는 특정 문장을 입력하고 'Search in all applications'를 선택합니다.
 
-![image](https://github.com/user-attachments/assets/52881a63-c983-4f1b-b123-3399e726b7ef)
+![image](https://github.com/user-attachments/assets/52881a63-c983-4f1b-b123-3399e726b7ef#.png)
 
-![image](https://github.com/user-attachments/assets/d3e949c4-3900-490d-989f-40e24d8b24b1)
+![image](https://github.com/user-attachments/assets/d3e949c4-3900-490d-989f-40e24d8b24b1#.png)
 
 검색 결과로 해당 오타가 어디있었는지 쉽게 찾을 수 있습니다.
 

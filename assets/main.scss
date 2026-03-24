@@ -5,3 +5,17 @@
   padding-right: 15px;
   padding-left: 15px;
 }
+
+/* 팝업(모달) 창 자체의 스크롤을 없앱니다 */
+.modal-container-class { 
+    overflow: hidden !important; 
+}
+
+/* 이미지가 화면(뷰포트) 크기를 넘어가지 않도록 제한합니다 */
+.modal-container-class img {
+    max-width: 100vw !important; /* 화면 가로 너비의 100% 까지만 */
+    max-height: 100vh !important; /* 화면 세로 높이의 100% 까지만 */
+    width: auto;
+    height: auto;
+    object-fit: contain !important; /* 이미지 비율을 유지하면서 화면에 꽉 차게 조절 */
+}

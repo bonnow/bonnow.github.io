@@ -7,7 +7,7 @@ tags: [inbound, email, attachment, original]
 ---
 Created with the Business rule.
 
-<img width="1447" height="992" alt="image" src="https://github.com/user-attachments/assets/3e50fd07-a6f0-4ebc-869c-f086cebe06f6" />
+![image](https://github.com/user-attachments/assets/3e50fd07-a6f0-4ebc-869c-f086cebe06f6#.png)
 
 ```javascript
 (function executeRule(current /* sys_email */ , previous /* null */ ) {

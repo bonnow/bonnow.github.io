@@ -207,31 +207,3 @@ table {
     padding: 1.2rem;
   }
 }
-
-/* Chirpy 팝업 스크롤 제거 & 전체화면 맞춤 (통합본) */
-
-/* 1. 최신버전 (Glightbox) */
-.gslide-media {
-    background: transparent !important;
-    box-shadow: none !important;
-}
-.gslide-image img {
-    max-height: 95vh !important;
-    max-width: 95vw !important;
-    object-fit: contain !important;
-}
-
-/* 2. 구버전 (Magnific Popup) */
-.mfp-container {
-    padding: 0 !important;
-}
-.mfp-content {
-    background: transparent !important;
-    box-shadow: none !important;
-}
-img.mfp-img {
-    max-height: 95vh !important;
-    max-width: 95vw !important;
-    object-fit: contain !important;
-    padding: 0 !important;
-}

@@ -207,3 +207,26 @@ table {
     padding: 1.2rem;
   }
 }
+/* 팝업 창 스크롤 제거 및 화면 맞춤 (Chirpy 공통 적용) */
+
+/* 1. Magnific Popup (Chirpy 구버전) */
+.mfp-container {
+    overflow: hidden !important;
+    padding: 0 !important;
+}
+img.mfp-img {
+    max-height: 100vh !important;
+    max-width: 100vw !important;
+    object-fit: contain !important;
+    padding: 0 !important;
+}
+
+/* 2. Glightbox (Chirpy 최신버전) */
+.gslide-image img {
+    max-height: 100vh !important;
+    max-width: 100vw !important;
+    object-fit: contain !important;
+}
+.gslide-media {
+    overflow: hidden !important;
+}

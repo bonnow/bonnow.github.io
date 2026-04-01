@@ -98,13 +98,11 @@ Sometimes we want to add the menu at the left side menu of the Service Operation
 
 1. Go to the **'UX Page Property(sys_ux_page_property)'** table list.
 
-
 ![image](https://github.com/user-attachments/assets/b229301d-30a3-4812-9767-680ae24dec57#.png)
 
 2. Search the record named **chrome_toolbar**
 
 3. Select the one with **Page : Service Operations Workspace** + **Application : Service Operations Workspace Core**
-
 
 ![image](https://github.com/user-attachments/assets/ec6f1fcb-8539-49fb-9b3f-29fc4fc07fdf#.png)
 
@@ -126,11 +124,9 @@ Sometimes we want to add the menu at the left side menu of the Service Operation
 
 1. **'UX Page Property(sys_ux_page_property)'** table 리스트 페이지로 갑니다.
 
-
 ![image](https://github.com/user-attachments/assets/b229301d-30a3-4812-9767-680ae24dec57#.png)
 
 2. 이름이 **chrome_toolbar**, **Page : Service Operations Workspace**, **Application : Service Operations Workspace Core** 인 레코드를 찾습니다.
-
 
 ![image](https://github.com/user-attachments/assets/ec6f1fcb-8539-49fb-9b3f-29fc4fc07fdf#.png)
 

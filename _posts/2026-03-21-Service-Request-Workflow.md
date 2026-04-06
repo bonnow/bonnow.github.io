@@ -628,6 +628,149 @@ function chkRequester(current, workflow){
 }
 ```
 
+## 18. Create auto approved approval
+
+![image](https://github.com/user-attachments/assets/c34fe7ed-6291-4cb9-8270-2040765024f9#.png)
+
+```javascript
+(function(current, workflow) {
+    var grApproval = new GlideRecord('sysapproval_approver');
+    grApproval.initialize();
+    grApproval.approver = workflow.scratchpad.now.duplicate_approver;
+    grApproval.state = 'approved';
+    grApproval.sysapproval = current.getUniqueValue();
+    grApproval.document_id = current.getUniqueValue();
+    grApproval.source_table = 'sc_req_item';
+    grApproval.comments = 'This request has been automatically approved by the system as the requester and the approver are identical, or the approver has previously granted approval for this ticket.';
+    grApproval.insert();
+})(current, workflow);
+```
+
+## 19. To store the approval history
+
+![image](https://github.com/user-attachments/assets/e7045fe4-448e-4b0f-8faf-9b4c12b1456c#.png)
+
+```javascript
+(function(current, workflow) {
+    var grApproval = new GlideRecord('sysapproval_approver');
+    grApproval.addEncodedQuery('sysapproval=' + current.getUniqueValue() + '^state!=cancelled');
+    grApproval.query();
+
+    while (grApproval.next()) {
+        grApproval.wf_activity = '';
+        grApproval.update();
+    }
+
+    var grGapproval = new GlideRecord('sysapproval_group');
+    grGapproval.addEncodedQuery('parent=' + current.getUniqueValue() + '^approval!=cancelled');
+    grGapproval.query();
+
+    while (grGapproval.next()) {
+        grGapproval.wf_activity = '';
+        grGapproval.update();
+    }
+})(current, workflow);
+```
+
+## 20. Check Line's Type - Task
+
+![image](https://github.com/user-attachments/assets/5a3cc625-febe-45e8-874f-537b038bf001#.png)
+
+```javascript
+function typeTask(current, workflow) {
+	if(workflow.scratchpad.now.type == 'task'){
+		return 'yes';
+	}
+	return 'no';
+}
+answer = typeTask(current, workflow);
+```
+
+
+## 21. Check the primary worker
+
+![image](https://github.com/user-attachments/assets/5f27b40b-6d18-4e1d-91f6-d1398f32abd9#.png)
+
+```javascript
+(function(current, workflow) {
+    var primary_worker = workflow.scratchpad.now.primary_worker;
+
+    if (primary_worker != '') {
+        var grChkUser = new GlideRecord('sys_user');
+        grChkUser.addEncodedQuery('sys_id=' + primary_worker);
+        grChkUser.query();
+
+        if (grChkUser.next()) {
+            if (grChkUser.active) {
+                var grRoleCheck = new GlideRecord('sys_user_has_role');
+                grRoleCheck.addEncodedQuery("role.name=itil^user=" + grChkUser.getUniqueValue());
+                grRoleCheck.query();
+
+                if (grRoleCheck.next()) {
+                    workflow.scratchpad.now.primary_worker = grChkUser.getUniqueValue();
+                }
+            }
+        }
+    }
+})(current, workflow);
+```
+
+
+## 22. Create Task
+
+![image](https://github.com/user-attachments/assets/af722caf-9e7e-4c98-ba96-415f5f470893#.png)
+
+```javascript
+(function(current, workflow) {
+
+    var gr = new GlideRecord('sc_task');
+    gr.initialize();
+    gr.request_item = current.getUniqueValue();
+    gr.assignment_group = workflow.scratchpad.now.groups;
+    if (workflow.scratchpad.now.primary_worker != '') {
+        gr.assigned_to = workflow.scratchpad.now.primary_worker;
+    }
+    gr.short_description = workflow.scratchpad.now.short_desc;
+    gr.description = workflow.scratchpad.now.desc;
+    var taskId = gr.insert();
+
+    var grVariables = new GlideRecord('sc_item_option_mtom');
+    grVariables.addEncodedQuery('request_item=' + current.getUniqueValue());
+    grVariables.query();
+
+    while (grVariables.next()) {
+        var grTaskVariable = new GlideRecord('sc_item_variables_task');
+        grTaskVariable.initialize();
+        grTaskVariable.task = taskId;
+        grTaskVariable.variable = grVariables.sc_item_option.item_option_new.getValue();
+        grTaskVariable.insert();
+    }
+
+})(current, workflow);
+```
+
+## 23. Check Line's Type - Event
+
+![image](https://github.com/user-attachments/assets/85a54ecf-e6c5-4165-ba3e-bbbbeafee697#.png)
+
+```javascript
+function typeEvent(current, workflow) {
+	if(workflow.scratchpad.now.type == 'event'){
+		return 'yes';
+	}
+	return 'no';
+}
+answer = typeEvent(current, workflow);
+```
+
+
+
+
+
+
+
+
+
 
 </div>
 <div class="lang-ko" markdown="1">

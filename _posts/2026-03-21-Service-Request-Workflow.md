@@ -153,6 +153,96 @@ Details of the SR workflow.
 
 ![image](https://github.com/user-attachments/assets/8bdf493e-8d44-498b-af68-97b0275b2b29#.png)
 
+```javascript
+(function(current, workflow) {
+    var first = workflow.scratchpad.srAtLines.shift();
+    workflow.scratchpad.current.push(first);
+
+    var sameOrder = 0;
+
+    for (var i = 0; i < workflow.scratchpad.srAtLines.length; i++) {
+        if (workflow.scratchpad.srAtLines[i].order == first.order) {
+            sameOrder = sameOrder + 1;
+        } else {
+            break;
+        }
+    }
+    for (var j = sameOrder; j > 0; j--) {
+        var tmp = workflow.scratchpad.srAtLines.shift();
+        workflow.scratchpad.current.push(tmp);
+    }
+	
+})(current, workflow);
+```
+
+## 3. Assgined to field is empty
+
+![image](https://github.com/user-attachments/assets/72652cec-1e43-4c68-b537-ffc9a0a56a0f#.png)
+
+
+## 4. Set State in WIP
+
+![image](https://github.com/user-attachments/assets/098a56e7-3661-4342-af74-423e2e6d97f9#.png)
+
+
+## 5. Set State to Open
+
+![image](https://github.com/user-attachments/assets/21b2299c-4695-4a3e-ac65-f7d70d6da84a#.png)
+
+
+## 6. Check the condition
+
+![image](https://github.com/user-attachments/assets/c57db34b-bafc-4da4-8ff5-b46a89503825#.png)
+
+```javascript
+function checkCondition(current, workflow) {
+	var ans = 'yes';
+	var record = workflow.scratchpad.current[0];
+
+	var gr = new GlideRecord('x_hap_sr_flow_sr_at_lines');
+	gr.get(record.sysId);
+
+	var conditionFail = false;
+	var scriptedFail = false;
+
+	// 1. Evaluate condition if present
+	if (gr.condition) {
+		var grRitm = new GlideAggregate('sc_req_item');
+		grRitm.addEncodedQuery('sys_id=' + current.getUniqueValue() + '^' + gr.condition);
+		grRitm.query();
+		if (!grRitm.next()) {
+			conditionFail = true;
+		}
+	}
+
+	// 2. Evaluate scripted_condition if present
+	if (gr.scripted_condition) {
+		var evaluator = new GlideScopedEvaluator();
+		evaluator.putVariable('source', current);
+		evaluator.putVariable('answer', null);
+		evaluator.evaluateScript(gr, 'scripted_condition', null);
+		var result = evaluator.getVariable('answer');
+
+		if (result !== true && result !== null) {
+			scriptedFail = true;
+		}
+	}
+
+	// 3. Final decision
+	if (conditionFail || scriptedFail) {
+		ans = 'no';
+		workflow.scratchpad.current.shift(); // move to next item
+	}
+
+	return ans;
+}
+
+answer = checkCondition(current, workflow);
+```
+
+
+
+
 
 </div>
 <div class="lang-ko" markdown="1">

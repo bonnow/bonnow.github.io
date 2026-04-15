@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "How to change user referenced field value at once"
-date: 2026-03-24 10:00:00 +0800
+date: 2026-04-15 10:00:00 +0800
 categories: [servicenow platform]
-tags: [script, search, code, find]
+tags: [script, user, reference, field, value, change]
 ---
 
 <style>

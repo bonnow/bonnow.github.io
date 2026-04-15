@@ -89,13 +89,19 @@ tags: [script, user, reference, field, value, change]
 ## Why this script is necessary
 
 **1. Overcoming the Limits of Manual Updates**
+
 In ServiceNow, a user record (sys_user) is heavily referenced across dozens or hundreds of tables—such as 'Caller' on Incidents, 'Assigned to' on Tasks, and 'Owned by' on Configuration Items (CMDB). When an incorrectly created user profile has already been tied to various tickets or assets, manually hunting down and updating every single instance is practically impossible and highly time-consuming. This script solves this by dynamically querying the sys_dictionary to automatically find every field that references the user table.
 
+
 **2. Ensuring Data Integrity**
+
 If you simply disable or delete the incorrect user record, any records previously linked to it will be left with an orphaned reference (either showing up blank or as a raw Sys ID string). This breaks reporting, dashboards, and data relationships. This script ensures absolute data integrity by seamlessly swapping the incorrect user reference with the correct one across the entire platform, leaving no broken links behind.
 
+
 **3. Safe and Silent Mass Updates**
+
 The biggest risk when bulk-updating thousands of records is causing system performance degradation or triggering a "Notification Storm." This script safely executes a "silent update." By using setWorkflow(false) and autoSysFields(false), it bypasses all Business Rules, email notifications, and workflows. Furthermore, it preserves the original audit trails by not overwriting the 'Updated' date or 'Updated by' fields on historical records.
+
 
 ---
 
@@ -173,13 +179,19 @@ if (isDryRun) {
 ## 이 스크립트가 필요한 이유 (Why this script is necessary)
 
 **1. 수작업의 한계 및 시간 단축 (Overcoming Manual Limitations)**
+
 ServiceNow에서 사용자 레코드(sys_user)는 Incident의 'Caller', Task의 'Assigned to', CMDB의 'Owned by' 등 수십에서 수백 개의 테이블에서 광범위하게 참조됩니다. 잘못 생성된 사용자 계정이 이미 여러 티켓이나 데이터에 연결되어 버린 경우, 이를 사람이 일일이 찾아내어 수정하는 것은 사실상 불가능하며 엄청난 시간이 소모됩니다. 이 스크립트는 시스템의 데이터 사전(sys_dictionary)을 동적으로 훑어 수정이 필요한 모든 곳을 자동으로 찾아냅니다.
 
+
 **2. 데이터 무결성 확보 (Ensuring Data Integrity)**
+
 잘못된 사용자 레코드를 단순히 비활성화하거나 삭제해 버리면, 기존에 연결되어 있던 데이터들은 대상이 없는 '고아(Orphan)' 참조 값(빈 값 또는 Sys ID 텍스트)을 가지게 되어 리포트나 대시보드 통계에 치명적인 오류를 일으킵니다. 이 스크립트는 잘못된 참조 값을 올바른 사용자로 일괄 치환하여 데이터의 무결성과 연결성을 완벽하게 유지합니다.
 
+
 **3. 안전한 대량 업데이트 (Safe & Silent Mass Updates)**
+
 수천 건의 데이터를 한 번에 업데이트할 때 가장 위험한 것은 시스템 부하와 'Notification Storm(알림 폭탄)'입니다. 이 스크립트는 setWorkflow(false)와 autoSysFields(false) 함수를 사용하여 비즈니스 룰, 이메일 알림 발송, 워크플로우를 강제로 차단합니다. 또한 기존 티켓의 '수정일(Updated)'이나 '수정자(Updated by)' 정보를 덮어쓰지 않아 감사(Audit) 기록의 훼손 없이 조용하고 안전하게 데이터만 교정합니다.
+
 
 ---
 

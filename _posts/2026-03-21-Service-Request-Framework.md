@@ -152,7 +152,7 @@ Instead of creating and maintaining separate flows for each catalog item, i want
 
 
 ## 5. Implementation Details
-- Workflow
+- Workflow (<a href="https://bonnow.github.io/servicenow%20itsm/2026/03/21/Service-Request-Workflow.html"> Link </a>)
 - Table & Form
 - System Properties
 - Etc
@@ -257,7 +257,7 @@ Instead of creating and maintaining separate flows for each catalog item, I want
 
 ## 5. Implementation Details
 
-- Workflow
+- Workflow (<a href="https://bonnow.github.io/servicenow%20itsm/2026/03/21/Service-Request-Workflow.html"> Link </a>)
 - Table & Form
 - System Properties
 - Etc

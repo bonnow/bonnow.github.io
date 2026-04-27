@@ -2,7 +2,7 @@
 layout: post
 title: "Reveal more fields in Reference Variable"
 date: 2026-03-10 10:00:00 +0800
-categories: [servicenow ITSM]
+categories: [servicenow itsm]
 tags: [reference, variable, attirbutes]
 ---
 

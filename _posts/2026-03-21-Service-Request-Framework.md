@@ -117,7 +117,7 @@ Instead of creating and maintaining separate flows for each catalog item, i want
 
 ## 3. Workflow Overview
 
-<img width="1966" height="1365" alt="Screenshot 2026-03-21 at 14 36 23" src="https://github.com/user-attachments/assets/411fa8c2-172c-4d6f-97cc-55bc813b3fba" />
+![image](https://github.com/user-attachments/assets/411fa8c2-172c-4d6f-97cc-55bc813b3fba#.png)
 
 
 ## 4. Custom Table Design
@@ -163,7 +163,7 @@ Instead of creating and maintaining separate flows for each catalog item, i want
     
     This item was created for users who need help related to ServiceNow.
     
-    <img width="1919" height="1209" alt="Screenshot 2026-03-21 at 15 02 27" src="https://github.com/user-attachments/assets/3225511c-8856-4bb0-bb5d-e37450557e11" />
+	![image](https://github.com/user-attachments/assets/3225511c-8856-4bb0-bb5d-e37450557e11#.png)
 
     
     1. In the Process Engine, select the worflow named "**SR workflow**".
@@ -173,9 +173,9 @@ Instead of creating and maintaining separate flows for each catalog item, i want
     
     This item includes logic so that when a user submits the catalog item through **Now Mobile**, the app is automatically downloaded to the user's phone using integration with Intune.
 
-	<img width="1698" height="1099" alt="Screenshot 2026-03-21 at 15 03 09" src="https://github.com/user-attachments/assets/1a428aa5-cd3a-4bfb-a96d-5def529bbabb" />
+	![image](https://github.com/user-attachments/assets/1a428aa5-cd3a-4bfb-a96d-5def529bbabb#.png)
 
-	<img width="1072" height="697" alt="Screenshot 2026-03-21 at 15 03 56" src="https://github.com/user-attachments/assets/4cba84f5-2eab-40ef-89d0-76560bc21f38" />
+	![image](https://github.com/user-attachments/assets/4cba84f5-2eab-40ef-89d0-76560bc21f38#.png)
 
     In this case, tasks are generated, and I specifically created an **Automation Group** and an **Automation User**. When work is assigned to that group or user, it can be used totrigger a flow in Flow Designer.
     
@@ -221,7 +221,7 @@ Instead of creating and maintaining separate flows for each catalog item, I want
 
 ## 3. Workflow Overview
 
-<img width="1966" height="1365" alt="Screenshot 2026-03-21 at 14 36 23" src="https://github.com/user-attachments/assets/411fa8c2-172c-4d6f-97cc-55bc813b3fba" />
+![image](https://github.com/user-attachments/assets/411fa8c2-172c-4d6f-97cc-55bc813b3fba#.png)
 
 
 ## 4. Custom Table Design
@@ -267,20 +267,21 @@ Instead of creating and maintaining separate flows for each catalog item, I want
 1. Catalog Item : ServiceNow Help
     
     이 item은 사용자들이 ServiceNow 관련해서 도움이 필요한 경우 사용하기 위해 생성되었습니다.
-    
-    <img width="1919" height="1209" alt="Screenshot 2026-03-21 at 15 02 27" src="https://github.com/user-attachments/assets/3225511c-8856-4bb0-bb5d-e37450557e11" />
+
+	![image](https://github.com/user-attachments/assets/3225511c-8856-4bb0-bb5d-e37450557e11#.png)
 
     
     1. Process Engine에서 Workflow를 ‘SR workflow’로 선택해줍니다.
     2. SR AT Lines라는 Related List에서 New 버튼을 클릭하여 해당 Item의 흐름을 순서대로 나열해줍니다.
 
-2. Catalog Item : Youtube
+1. Catalog Item : Youtube
     
     이 item은 사용자가 Now Mobile에서 catalog item을 제출하면 intune을 활용하여 자동으로 해당 app을 사용자의 핸드폰에 다운로드 시켜주는 로직을 가지고 있습니다.
 
-	<img width="1698" height="1099" alt="Screenshot 2026-03-21 at 15 03 09" src="https://github.com/user-attachments/assets/1a428aa5-cd3a-4bfb-a96d-5def529bbabb" />
+	![image](https://github.com/user-attachments/assets/1a428aa5-cd3a-4bfb-a96d-5def529bbabb#.png)
 
-	<img width="1072" height="697" alt="Screenshot 2026-03-21 at 15 03 56" src="https://github.com/user-attachments/assets/4cba84f5-2eab-40ef-89d0-76560bc21f38" />
+	![image](https://github.com/user-attachments/assets/4cba84f5-2eab-40ef-89d0-76560bc21f38#.png)
+
     
     여기서는 task를 생성하되, 저는 특별히 ‘Automation Group’을 만들고, ‘Automation User’ 라는 유저를 만들어서 해당 그룹이나 유저에게 작업이 할당되면 flow designer에서 flow를 trigger 할 수 있게 하여 활용했습니다.
     

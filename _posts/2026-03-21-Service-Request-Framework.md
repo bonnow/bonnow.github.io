@@ -3,7 +3,7 @@ layout: post
 title: "Service Request Framework"
 date: 2026-03-21 10:00:00 +0800
 categories: [servicenow itsm]
-tags: [request, workflow, flow, service request]
+tags: [request, workflow, flow, service, request]
 ---
 
 <style>

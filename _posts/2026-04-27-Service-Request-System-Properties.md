@@ -85,7 +85,7 @@ tags: [request, workflow, flow, service]
 </script>
 
 <div class="lang-en" markdown="1">
-## This is a System Property created for flow logic and to help manage Reuqest Management.
+This is a System Property created for flow logic and to help manage Reuqest Management.
 
 ### Dynamic approval Group
 
@@ -144,7 +144,7 @@ Description : Group that shows the users whoo currently holding the role (which 
 </div>
 
 <div class="lang-ko" markdown="1">
-## 아래의 System Property는 Service Request Flow 로직을 구성하고 Request Management 관리를 위해 만들어졌습니다.
+아래의 System Property는 Service Request Flow 로직을 구성하고 Request Management 관리를 위해 만들어졌습니다.
 
 ### Dynamic approval Group
 

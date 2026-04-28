@@ -97,7 +97,7 @@ tags: [request, workflow, flow, service]
 ![image](https://github.com/user-attachments/assets/bc82c824-5602-49ba-9bec-ab48f6c43c5c#.png)
 
 
-### Dynamic Approvl Role
+### Dynamic Approval Role
 
 ![image](https://github.com/user-attachments/assets/47bcb513-fef0-48f0-84ae-d1ef4c5cd806#.png)
 
@@ -159,7 +159,7 @@ tags: [request, workflow, flow, service]
 ![image](https://github.com/user-attachments/assets/bc82c824-5602-49ba-9bec-ab48f6c43c5c#.png)
 
 
-### Dynamic Approvl Role
+### Dynamic Approval Role
 
 ![image](https://github.com/user-attachments/assets/47bcb513-fef0-48f0-84ae-d1ef4c5cd806#.png)
 

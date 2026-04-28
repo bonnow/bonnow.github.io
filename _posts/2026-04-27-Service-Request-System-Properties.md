@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Service Request System Properties"
-date: 2026-03-21 10:00:00 +0800
+date: 2026-04-27 10:00:00 +0800
 categories: [servicenow itsm]
 tags: [request, workflow, flow, service]
 ---
@@ -102,6 +102,48 @@ tags: [request, workflow, flow, service]
 ![image](https://github.com/user-attachments/assets/47bcb513-fef0-48f0-84ae-d1ef4c5cd806#.png)
 
 
+### Assign Order
+
+![image](https://github.com/user-attachments/assets/6fdf3968-78e5-4335-a1ae-360b726dd8d1#.png)
+
+
+### Auto approve
+
+![image](https://github.com/user-attachments/assets/de5671c7-0026-490f-a966-1cbd67949730#.png)
+
+
+### Error Notification Recipients
+
+![image](https://github.com/user-attachments/assets/f57c3cde-f1a4-41ab-910a-551c2de85dba#.png)
+
+
+### Error Notification Recipients
+
+![image](https://github.com/user-attachments/assets/6c6ea20e-ae02-4e35-80b2-5df5e7aebce1#.png)
+
+
+### Finish Ritm
+
+![image](https://github.com/user-attachments/assets/bbef1fc4-ea82-4794-bfa0-ad2641f8380a#.png)
+
+
+### Remove Duplicate Approve
+
+![image](https://github.com/user-attachments/assets/0a3acb6b-1239-4340-a1e4-6564ce3b97d5#.png)
+
+
+### Show Order
+
+![image](https://github.com/user-attachments/assets/5c69791a-c31e-43e0-ac12-3706c46132a9#.png)
+
+
+### System admin
+
+![image](https://github.com/user-attachments/assets/c4a8fe3e-bb1a-4e3c-b31b-60bd5d70d490#.png)
+
+
+
+
 </div>
 
 <div class="lang-ko" markdown="1">
@@ -120,5 +162,46 @@ tags: [request, workflow, flow, service]
 ### Dynamic Approvl Role
 
 ![image](https://github.com/user-attachments/assets/47bcb513-fef0-48f0-84ae-d1ef4c5cd806#.png)
+
+
+### Assign Order
+
+![image](https://github.com/user-attachments/assets/6fdf3968-78e5-4335-a1ae-360b726dd8d1#.png)
+
+
+### Auto approve
+
+![image](https://github.com/user-attachments/assets/de5671c7-0026-490f-a966-1cbd67949730#.png)
+
+
+### Error Notification Recipients
+
+![image](https://github.com/user-attachments/assets/f57c3cde-f1a4-41ab-910a-551c2de85dba#.png)
+
+
+### Error Notification Recipients
+
+![image](https://github.com/user-attachments/assets/6c6ea20e-ae02-4e35-80b2-5df5e7aebce1#.png)
+
+
+### Finish Ritm
+
+![image](https://github.com/user-attachments/assets/bbef1fc4-ea82-4794-bfa0-ad2641f8380a#.png)
+
+
+### Remove Duplicate Approve
+
+![image](https://github.com/user-attachments/assets/0a3acb6b-1239-4340-a1e4-6564ce3b97d5#.png)
+
+
+### Show Order
+
+![image](https://github.com/user-attachments/assets/5c69791a-c31e-43e0-ac12-3706c46132a9#.png)
+
+
+### System admin
+
+![image](https://github.com/user-attachments/assets/c4a8fe3e-bb1a-4e3c-b31b-60bd5d70d490#.png)
+
 
 </div>

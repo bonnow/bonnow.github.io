@@ -114,12 +114,7 @@ tags: [request, workflow, flow, service]
 
 ### Error Notification Recipients
 
-![image](https://github.com/user-attachments/assets/f57c3cde-f1a4-41ab-910a-551c2de85dba#.png)
-
-
-### Error Notification Recipients
-
-![image](https://github.com/user-attachments/assets/6c6ea20e-ae02-4e35-80b2-5df5e7aebce1#.png)
+![image](https://github.com/user-attachments/assets/14495f9e-2660-486c-be45-ae43e699a490#.png)
 
 
 ### Finish Ritm
@@ -176,12 +171,7 @@ tags: [request, workflow, flow, service]
 
 ### Error Notification Recipients
 
-![image](https://github.com/user-attachments/assets/f57c3cde-f1a4-41ab-910a-551c2de85dba#.png)
-
-
-### Error Notification Recipients
-
-![image](https://github.com/user-attachments/assets/6c6ea20e-ae02-4e35-80b2-5df5e7aebce1#.png)
+![image](https://github.com/user-attachments/assets/14495f9e-2660-486c-be45-ae43e699a490#.png)
 
 
 ### Finish Ritm

@@ -89,27 +89,59 @@ This is a System Property created for flow logic and to help manage Reuqest Mana
 
 ### Dynamic approval Group
 
-Description : Group that shows the users whoo currently holding the role (which was set in dynamic_role_approval system property). Need to write the sys_id of the group.
+Description : 
+
+Group that shows the users whoo currently holding the role (which was set in dynamic_role_approval system property). Need to write the sys_id of the group.
 
 ![image](https://github.com/user-attachments/assets/12bd6686-f9ef-4a9b-b743-8623fb0f9d67#.png)
 
 
 ### Dynamic Approval On/Off
 
+Description : 
+
+Property to turn on/off dynamic approval
+
 ![image](https://github.com/user-attachments/assets/bc82c824-5602-49ba-9bec-ab48f6c43c5c#.png)
 
 
 ### Dynamic Approval Role
+
+Description : 
+
+Approval role that you want to manage dynamically. Write the sys_id of the role. Default value is 'business_stakeholder'.
 
 ![image](https://github.com/user-attachments/assets/47bcb513-fef0-48f0-84ae-d1ef4c5cd806#.png)
 
 
 ### Assign Order
 
+Description : 
+
+task(or approval) assignment orders
+
+- groups
+
+- variables
+
+- fields
+
+## only use, to separate the values. No spaces.
+
+default : groups, variables, fields
+
 ![image](https://github.com/user-attachments/assets/6fdf3968-78e5-4335-a1ae-360b726dd8d1#.png)
 
 
 ### Auto approve
+
+Description :
+
+Automatically approve the approval task when the approver is the same person as the requester.
+
+true : enable auto approval
+
+false : disable auto approval
 
 ![image](https://github.com/user-attachments/assets/de5671c7-0026-490f-a966-1cbd67949730#.png)
 

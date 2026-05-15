@@ -139,9 +139,102 @@ catalog를 만드는것과 달리 order guide를 제출하면 또다른 Universa
 
 
 ## UI Action
-SOW에 있는 버튼인 'Create Request' 버튼을 조금 손봐야한다.
 
 ![image](https://github.com/user-attachments/assets/95749b61-9945-4459-9a80-62ea979174d3#.png)
+SOW에 있는 버튼인 'Create Request' 버튼을 조금 손봐야한다.
+
+![image](https://github.com/user-attachments/assets/9b6be38b-1df7-43ce-b41e-0ce0b0095ede#.png)
+
+sys_ui_action 테이블 리스트에서 'Create Request' 라는 button을 찾아야한다.
+
+'Create Request'라는 이름으로 2개의 ui action 존재하는데, 하나는 workspace이고 다른 하나는 Core UI를 위한것이다.
+
+우리는 workspace에 있는 것만 먼저 고칠것이니, workspace에 관련된 ui action을 선택해준다.
+
+```javascript
+function onClick() {
+    var ga = new GlideAjax('sn_uni_req.UniversalRequestAJAXUtils');
+    ga.addParam('sysparm_name', 'hasPrimaryTicket');
+    ga.addParam('sysparm_ur_sys_id', g_form.getUniqueValue());
+    ga.getXMLAnswer(function(answer) {
+        if (answer == "true")
+            g_form.addErrorMessage(getMessage("You cannot create a new request. The Universal Request already has a primary ticket associated with it."));
+        else {
+            var saveGa = new GlideAjax('URSessionUtil');
+            saveGa.addParam('sysparm_name', 'saveUrId');
+            saveGa.addParam('sysparm_ur_id', g_form.getUniqueValue());
+            saveGa.getXMLAnswer(function(response) {
+                var params = {};
+                params.sysparm_parent_table = g_form.getTableName();
+                params.sysparm_parent_sys_id = g_form.getUniqueValue();
+                g_service_catalog.openCatalogItem('sc_cat_item', '-1', params);
+            });
+        }
+    });
+}
+```
+
+그 후에 해당 workspace client script를 위와 같이 변경시켜준다.
+
+해당 코드 변경을 통해 server session에 현재 열려있는 UR의 sys_id를 저장할 수 있게 된다.
+
+
+## Script Include
+
+이제는 그럼 'System Definition > Script Includes' 메뉴로 이동해서 server side script를 작성해보자.
+
+![image](https://github.com/user-attachments/assets/b007cfb6-70b8-417b-90b5-734ed4207b0e#.png)
+
+```javascript
+var URSessionUtil = Class.create();
+URSessionUtil.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    saveUrId: function() {
+        var urId = this.getParameter('sysparm_ur_id');
+        gs.getSession().putClientData('source_ur_id', urId);
+        return urId;
+    },
+
+    getUrId: function() {
+        return gs.getSession().getClientData('source_ur_id');
+    },
+
+    type: 'URSessionUtil'
+});
+```
+
+코드에는 2개의 함수가 들어간다.
+
+1. UR sys_id를 session에 저장하는 함수
+2. 저장된 sys_id를 꺼내주는 함수
+
+
+## Business Rule
+
+그렇다면 이제는 REQ가 생성된 이후에 새로운 UR을 생성하지 못하게 그 중간에서 기존 UR 값을 넣어주는 Business Rule을 만들어보자.
+
+![image](https://github.com/user-attachments/assets/cb95c5e7-8ab1-41b1-982e-39781540934d#.png)
+
+```javascript
+(function executeRule(current, previous /*null when async*/) {
+    var existingUrId = gs.getSession().getClientData('source_ur_id');
+    
+    gs.log("DEBUG: Session UR ID is " + existingUrId, "UR_LINK");
+
+    if (existingUrId) {
+        current.universal_request = existingUrId;
+
+        try {
+            new sn_uni_req.UniversalRequestUtils().attachPrimaryTicket(existingUrId, current.sys_id, null, true);
+        } catch (e) {
+            gs.error("UR Link Error: " + e.getMessage());
+        }
+
+        gs.getSession().putClientData('source_ur_id', '');
+    }
+})(current, previous);
+```
+
+
 
 
 

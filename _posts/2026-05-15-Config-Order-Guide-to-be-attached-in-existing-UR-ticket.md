@@ -127,8 +127,25 @@ catalog를 만드는것과 달리 order guide를 제출하면 또다른 Universa
 
 즉, OOB 프로세스 중간에 hijacking 해서 다른 길로 가게 만드는 것이다.
 
+
+구현시에는 아래와 같은 기능들을 config 할 것이다.
+
+- UI Action : 현재 UR의 sys_id를 서버에 넘겨주는 역할
+- Script Include : 서버에 있는 값을 조회하기 위한 용도
+- Business Rule : 새로운 UR을 만들기 전 가로채는 역할
+- Variable set : 맵핑 되어야할 UR의 sys_id를 담아두는 용도
+
+
+
+
 ## UI Action
 SOW에 있는 버튼인 'Create Request' 버튼을 조금 손봐야한다.
+
+![image](https://github.com/user-attachments/assets/95749b61-9945-4459-9a80-62ea979174d3#.png)
+
+
+
+
 
 ## Event to send the email
 

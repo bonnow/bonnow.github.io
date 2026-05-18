@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Config-Order-Guide-to-be-attached-in-existing-UR-ticket"
+title: "Config Order Guide to be attached in existing UR ticket"
 date: 2026-05-15 10:00:00 +0800
 categories: [servicenow itsm]
 tags: [request, order guide, business rule, ui action]
@@ -214,6 +214,8 @@ URSessionUtil.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 
 ![image](https://github.com/user-attachments/assets/cb95c5e7-8ab1-41b1-982e-39781540934d#.png)
 
+Order 번호가 default로 100으로 잡힐 텐데, 기존 system에서 돌아가는 것을 무시하고 먼저 돌리게 하기 위해서 10으로 바꾸주었다.
+
 ```javascript
 (function executeRule(current, previous /*null when async*/) {
     var existingUrId = gs.getSession().getClientData('source_ur_id');
@@ -235,15 +237,29 @@ URSessionUtil.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 ```
 
 
+## Variable Set
+
+Server에 저장해둔 sys_id를 각각 ritm 별로 저장해두고 맵핑시켜야하므로 관리의 편의성을 위해 variable set을 만들어서 적용해야 할 catalog item들에 variable을 추가만 하는 식으로 하자.
+
+![image](https://github.com/user-attachments/assets/6f64093e-e15a-4d57-8e58-0e709f1d79a4#.png)
+
+![image](https://github.com/user-attachments/assets/c32644fc-a90d-4096-8be7-2a9e8f4a82df#.png)
+
+![image](https://github.com/user-attachments/assets/d0f87966-e863-486b-a788-e8553e565aed#.png)
+
+```javascript
+function onLoad() {
+    var ga = new GlideAjax('URSessionUtil');
+    ga.addParam('sysparm_name', 'getUrId');
+    ga.getXMLAnswer(function(answer) {
+        if (answer) {
+            g_form.setValue('parent_sys_id', answer); 
+        }
+    });
+}
+```
 
 
 
-
-
-## Event to send the email
-
-Create the event name 'send_email' to use send email with the event type record.
-
-![image](https://github.com/user-attachments/assets/aa4b12d7-c48e-4b24-ab90-15e59043a95d#.png)
 
 </div>

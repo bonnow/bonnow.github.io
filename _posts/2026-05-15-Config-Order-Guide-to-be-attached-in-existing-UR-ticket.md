@@ -124,6 +124,7 @@ To implement this, we configure the following four components:
 ## UI Action
 
 ![image](https://github.com/user-attachments/assets/95749b61-9945-4459-9a80-62ea979174d3#.png)
+
 SOW에 있는 버튼인 'Create Request' 버튼을 조금 손봐야한다.
 
 ![image](https://github.com/user-attachments/assets/9b6be38b-1df7-43ce-b41e-0ce0b0095ede#.png)
@@ -288,7 +289,9 @@ Service Operations Workspace(SOW)에서 End-user가 생성한 Universal Request(
 ## UI Action
 
 ![image](https://github.com/user-attachments/assets/95749b61-9945-4459-9a80-62ea979174d3#.png)
+
 SOW에 있는 버튼인 'Create Request' 버튼을 조금 손봐야한다.
+
 
 ![image](https://github.com/user-attachments/assets/9b6be38b-1df7-43ce-b41e-0ce0b0095ede#.png)
 

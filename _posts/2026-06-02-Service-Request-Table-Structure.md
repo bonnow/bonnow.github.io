@@ -115,6 +115,25 @@ tags: [request, workflow, flow, service]
 | Updates | sys_mod_count | Integer |  | 40 |  |  |
 | Variables | variables | List | Integer | 32 | encode_utf8=false |  |
 
+## Type : task
+<img width="1428" height="933" alt="image" src="https://github.com/user-attachments/assets/370ff8b4-cbb4-4e99-a0e6-546890457dd6" />
+![image](https://github.com/user-attachments/assets/370ff8b4-cbb4-4e99-a0e6-546890457dd6#.png)
+
+
+## Type : Approve
+<img width="1421" height="932" alt="image" src="https://github.com/user-attachments/assets/8a2ddfb3-ce5c-4d65-92e0-d1c77611b29a" />
+![image](https://github.com/user-attachments/assets/8a2ddfb3-ce5c-4d65-92e0-d1c77611b29a#.png)
+
+## Type : Event
+<img width="1433" height="912" alt="image" src="https://github.com/user-attachments/assets/e92cfdd7-6034-45d0-ae94-195eeeb93409" />
+![image](https://github.com/user-attachments/assets/e92cfdd7-6034-45d0-ae94-195eeeb93409#.png)
+
+## Type : Update RITM
+<img width="1430" height="931" alt="image" src="https://github.com/user-attachments/assets/fbf311f2-aaf8-4499-bc2d-b5035e84c550" />
+![image](https://github.com/user-attachments/assets/fbf311f2-aaf8-4499-bc2d-b5035e84c550#.png)
+
+
+
 
 </div>
 

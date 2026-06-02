@@ -87,6 +87,76 @@ tags: [request, workflow, flow, service]
 <div class="lang-en" markdown="1">
 *The extra configurations that compose the Service Request Framework*
 
+
+## Show the Request order
+
+![image](https://github.com/user-attachments/assets/14e03f44-ecb5-4149-8c2b-32f64e60bd1d#.png)
+
+If you want to show the request order for eacfh Requested Item catalogue like this one.
+
+<img width="1452" height="745" alt="image" src="https://github.com/user-attachments/assets/0b75a31f-6bc5-4c8b-9c81-52da6f4a22ff" />
+
+<img width="1449" height="649" alt="image" src="https://github.com/user-attachments/assets/9373742c-bb25-4a24-89bf-a7a3042535e5" />
+
+```javascript
+(function executeRule(current, previous) {
+    var str = '<style>.sr_at_notice_block {border-collapse: collapse;border: 1px solid black;}.sr_at_notice {border: 1px solid black;}</style><div style="text-align: center;"><table class="sr_at_notice_block" width="500px"><colgroup><col width="10%"/><col width="15%"/><col width="45%"/><col width="30%"/></colgroup><tr><th class="sr_at_notice">Order</th><th class="sr_at_notice">Type</th><th class="sr_at_notice">Title</th><th class="sr_at_notice">Assigned</th></tr>';
+
+    var grAtLines = new GlideRecord('x_hap_sr_flow_sr_at_lines');
+    grAtLines.addEncodedQuery('active=true^catalog_item=' + current.cat_item + '^ORDERBYorder');
+    grAtLines.query();
+
+    while (grAtLines.next()) {
+        var conditionFail = false;
+        var scriptedFail = false;
+
+        if (grAtLines.condition) {
+            var grChk = new GlideAggregate('sc_req_item');
+            grChk.addEncodedQuery('sys_id=' + current.getUniqueValue() + '^' + grAtLines.condition);
+            grChk.query();
+            if (!grChk.next()) {
+                conditionFail = true;
+            }
+        }
+
+        if (grAtLines.scripted_condition) {
+            var evaluator = new GlideScopedEvaluator();
+            evaluator.putVariable('source', current);
+            evaluator.putVariable('answer', null);
+            evaluator.evaluateScript(grAtLines, 'scripted_condition', null);
+            var result = evaluator.getVariable('answer');
+            if (result !== true && result !== 'true') {
+                scriptedFail = true;
+            }
+        }
+
+        if (conditionFail || scriptedFail) {
+            continue; // skip row
+        }
+
+        str += '<tr>';
+        str += '<td class="sr_at_notice">' + grAtLines.order.getDisplayValue() + '</td>';
+        str += '<td class="sr_at_notice">' + grAtLines.type.getDisplayValue() + '</td>';
+        str += '<td class="sr_at_notice">' + grAtLines.title.getDisplayValue() + '</td>';
+        if (grAtLines.groups) {
+            str += '<td class="sr_at_notice">' + grAtLines.groups.getDisplayValue() + '</td>';
+        } else if (grAtLines.variables) {
+            str += '<td class="sr_at_notice">' + grAtLines.variables.getDisplayValue() + '</td>';
+        } else {
+            str += '<td class="sr_at_notice">' + grAtLines.fields.getDisplayValue() + '</td>';
+        }
+        str += '</tr>';
+    }
+
+    str += '</table></div>';
+    current.work_notes = '[code]' + str + '[/code]';
+    current.update();
+})(current, previous);
+```
+
+
+
+
 ## Event to send the email
 
 Create the event name 'send_email' to use send email with the event type record.
@@ -101,6 +171,73 @@ Create the event name 'send_email' to use send email with the event type record.
 
 <div class="lang-ko" markdown="1">
 *The extra configurations that compose the Service Request Framework*
+
+## Show the Request order
+
+![image](https://github.com/user-attachments/assets/14e03f44-ecb5-4149-8c2b-32f64e60bd1d#.png)
+
+If you want to show the request order for eacfh Requested Item catalogue like this one.
+
+<img width="1452" height="745" alt="image" src="https://github.com/user-attachments/assets/0b75a31f-6bc5-4c8b-9c81-52da6f4a22ff" />
+
+<img width="1449" height="649" alt="image" src="https://github.com/user-attachments/assets/9373742c-bb25-4a24-89bf-a7a3042535e5" />
+
+```javascript
+(function executeRule(current, previous) {
+    var str = '<style>.sr_at_notice_block {border-collapse: collapse;border: 1px solid black;}.sr_at_notice {border: 1px solid black;}</style><div style="text-align: center;"><table class="sr_at_notice_block" width="500px"><colgroup><col width="10%"/><col width="15%"/><col width="45%"/><col width="30%"/></colgroup><tr><th class="sr_at_notice">Order</th><th class="sr_at_notice">Type</th><th class="sr_at_notice">Title</th><th class="sr_at_notice">Assigned</th></tr>';
+
+    var grAtLines = new GlideRecord('x_hap_sr_flow_sr_at_lines');
+    grAtLines.addEncodedQuery('active=true^catalog_item=' + current.cat_item + '^ORDERBYorder');
+    grAtLines.query();
+
+    while (grAtLines.next()) {
+        var conditionFail = false;
+        var scriptedFail = false;
+
+        if (grAtLines.condition) {
+            var grChk = new GlideAggregate('sc_req_item');
+            grChk.addEncodedQuery('sys_id=' + current.getUniqueValue() + '^' + grAtLines.condition);
+            grChk.query();
+            if (!grChk.next()) {
+                conditionFail = true;
+            }
+        }
+
+        if (grAtLines.scripted_condition) {
+            var evaluator = new GlideScopedEvaluator();
+            evaluator.putVariable('source', current);
+            evaluator.putVariable('answer', null);
+            evaluator.evaluateScript(grAtLines, 'scripted_condition', null);
+            var result = evaluator.getVariable('answer');
+            if (result !== true && result !== 'true') {
+                scriptedFail = true;
+            }
+        }
+
+        if (conditionFail || scriptedFail) {
+            continue; // skip row
+        }
+
+        str += '<tr>';
+        str += '<td class="sr_at_notice">' + grAtLines.order.getDisplayValue() + '</td>';
+        str += '<td class="sr_at_notice">' + grAtLines.type.getDisplayValue() + '</td>';
+        str += '<td class="sr_at_notice">' + grAtLines.title.getDisplayValue() + '</td>';
+        if (grAtLines.groups) {
+            str += '<td class="sr_at_notice">' + grAtLines.groups.getDisplayValue() + '</td>';
+        } else if (grAtLines.variables) {
+            str += '<td class="sr_at_notice">' + grAtLines.variables.getDisplayValue() + '</td>';
+        } else {
+            str += '<td class="sr_at_notice">' + grAtLines.fields.getDisplayValue() + '</td>';
+        }
+        str += '</tr>';
+    }
+
+    str += '</table></div>';
+    current.work_notes = '[code]' + str + '[/code]';
+    current.update();
+})(current, previous);
+```
+
 
 ## Event to send the email
 

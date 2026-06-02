@@ -85,6 +85,8 @@ tags: [request, workflow, flow, service]
 </script>
 
 <div class="lang-en" markdown="1">
+*The flow will check the table by order numbers. If records has the same order number, flow will check at the same time*
+
 ## Table Design
 
 | **Column label** | **Column name** | **Type** | **Reference** | **Max length** | **Attributes** | **Default values** |
@@ -115,18 +117,113 @@ tags: [request, workflow, flow, service]
 | Updates | sys_mod_count | Integer |  | 40 |  |  |
 | Variables | variables | List | Integer | 32 | encode_utf8=false |  |
 
-## Type : task
+
+## Form
+
+### Type : task
+
 ![image](https://github.com/user-attachments/assets/370ff8b4-cbb4-4e99-a0e6-546890457dd6#.png)
 
 
-## Type : Approve
+### Type : Approve
+
 ![image](https://github.com/user-attachments/assets/8a2ddfb3-ce5c-4d65-92e0-d1c77611b29a#.png)
 
-## Type : Event
+
+### Type : Event
+
 ![image](https://github.com/user-attachments/assets/e92cfdd7-6034-45d0-ae94-195eeeb93409#.png)
 
-## Type : Update RITM
+
+### Type : Update RITM
+
 ![image](https://github.com/user-attachments/assets/fbf311f2-aaf8-4499-bc2d-b5035e84c550#.png)
+
+
+
+## UI Policies
+
+### Set some fields mandatory
+
+![image](https://github.com/user-attachments/assets/628530cf-14ae-467d-988f-327bb360fca5#.png)
+
+
+### Set Active field default as true
+
+![image](https://github.com/user-attachments/assets/e670d05a-5aa3-4d46-afa3-befeed635725#.png)
+
+![image](https://github.com/user-attachments/assets/8c27024e-8389-4407-afde-e7173efc57f3#.png)
+
+
+
+
+## Client Script
+
+### Shows the Primary Worker field
+
+![image](https://github.com/user-attachments/assets/0c657150-397b-41d0-9d8b-ce2c55a9e0fa#.png)
+
+```javascript
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+	if((g_form.getValue('type') == 'task' || g_form.getValue('type') == 'ritm' )&& newValue != ''){
+		g_form.setDisplay('primary_worker', 'true');
+	} else {
+		g_form.setDisplay('primary_worker', 'false');
+	}
+   
+}
+```
+
+
+### SR AT Line form by type
+
+![image](https://github.com/user-attachments/assets/2d7fe8c8-728e-4fd6-8fa3-729d05b83f45#.png)
+
+```javascript
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (newValue == 'task') {
+        g_form.setMandatory('event', false);
+        g_form.setDisplay('event', false);
+        g_form.setDisplay('groups', true);
+        g_form.setDisplay('variables', true);
+        g_form.setDisplay('fields', true);
+        g_form.setDisplay('business_service', false);
+        g_form.setDisplay('service_offering', false);
+        g_form.setDisplay('reference_date', false);
+        g_form.setDisplay('lead_time', false);
+    } else if (newValue == 'approve') {
+        g_form.setMandatory('event', false);
+        g_form.setDisplay('event', false);
+        g_form.setDisplay('groups', true);
+        g_form.setDisplay('variables', true);
+        g_form.setDisplay('fields', true);
+        g_form.setDisplay('business_service', false);
+        g_form.setDisplay('service_offering', false);
+        g_form.setDisplay('reference_date', false);
+        g_form.setDisplay('lead_time', false);
+    } else if (newValue == 'event') {
+        g_form.setDisplay('event', true);
+        g_form.setMandatory('event', true);
+        g_form.setDisplay('groups', false);
+        g_form.setDisplay('variables', true);
+        g_form.setDisplay('fields', true);
+        g_form.setDisplay('business_service', false);
+        g_form.setDisplay('service_offering', false);
+        g_form.setDisplay('reference_date', false);
+        g_form.setDisplay('lead_time', false);
+    } else {
+        g_form.setMandatory('event', false);
+        g_form.setDisplay('event', false);
+        g_form.setDisplay('groups', true);
+        g_form.setDisplay('variables', false);
+        g_form.setDisplay('fields', false);
+        g_form.setDisplay('business_service', true);
+        g_form.setDisplay('service_offering', true);
+        g_form.setDisplay('reference_date', true);
+        g_form.setDisplay('lead_time', true);
+    }
+}
+```
 
 
 

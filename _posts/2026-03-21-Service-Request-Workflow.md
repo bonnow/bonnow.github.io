@@ -474,6 +474,69 @@ if (current.assigned_to) {
 ```
 
 
+### Subflow : Dynamically assign approval role
+
+![image](https://github.com/user-attachments/assets/34636d14-843f-4745-a140-f73756a02c35#.png)
+
+
+![image](https://github.com/user-attachments/assets/b3483555-8664-4b50-b735-8687b95322f3#.png)
+
+![image](https://github.com/user-attachments/assets/f32aac77-942f-4c9a-b046-da8f5bd0c037#.png)
+
+![image](https://github.com/user-attachments/assets/e8ef01ec-5c81-4560-a938-cd642cff89e9#.png)
+
+![image](https://github.com/user-attachments/assets/010724bf-2934-488d-97b2-b516be67debf#.png)
+
+
+### Action : Dynamic Approval User
+
+![image](https://github.com/user-attachments/assets/a248d16c-914c-44b7-9903-ac229d95a635#.png)
+
+Script : Check each user has the role
+![image](https://github.com/user-attachments/assets/8a1f0bc4-07e1-45c7-97ed-8bc164f43a71#.png)
+
+```javascript
+(function execute(inputs, outputs) {
+    var role_sysid = gs.getProperty('x_hap_sr_flow.dynamic_approval_role');
+    var role_group = gs.getProperty('x_hap_sr_flow.dynamic_approval_group');
+
+
+    // Check that group has role. If not assign the role.
+    var grGroupRole = new GlideRecord('sys_group_has_role');
+    grGroupRole.addEncodedQuery('group='+role_group+'^role='+role_sysid);
+    grGroupRole.query();
+
+    if(!grGroupRole.next()){        
+        grGroupRole.initialize();
+        grGroupRole.group = role_group;
+        grGroupRole.role = role_sysid;
+        grGroupRole.insert();
+    }
+
+
+    // add users to specific group to grant the role.
+    var users = inputs.users.split(',');
+
+    for(var i=0; i<users.length; i++){
+        var grRole = new GlideRecord('sys_user_has_role');
+        grRole.addEncodedQuery('user='+users[i]+'^role='+role_sysid);
+        grRole.query();
+
+        if(!grRole.next()){
+            var grMem = new GlideRecord('sys_user_grmember');
+            grMem.initialize();
+            grMem.group = role_group;
+            grMem.user = users[i];
+            grMem.insert();
+        }
+    }
+})(inputs, outputs);
+```
+
+
+
+
+
 ## 13. Check the "Auto Approve" system property
 
 ![image](https://github.com/user-attachments/assets/c4e1d90a-1a6e-4435-918e-b8479765b482#.png)
@@ -1411,6 +1474,66 @@ if (current.assigned_to) {
 }
 ```
 
+
+
+### Subflow : Dynamically assign approval role
+
+![image](https://github.com/user-attachments/assets/34636d14-843f-4745-a140-f73756a02c35#.png)
+
+
+![image](https://github.com/user-attachments/assets/b3483555-8664-4b50-b735-8687b95322f3#.png)
+
+![image](https://github.com/user-attachments/assets/f32aac77-942f-4c9a-b046-da8f5bd0c037#.png)
+
+![image](https://github.com/user-attachments/assets/e8ef01ec-5c81-4560-a938-cd642cff89e9#.png)
+
+![image](https://github.com/user-attachments/assets/010724bf-2934-488d-97b2-b516be67debf#.png)
+
+
+### Action : Dynamic Approval User
+
+![image](https://github.com/user-attachments/assets/a248d16c-914c-44b7-9903-ac229d95a635#.png)
+
+Script : Check each user has the role
+![image](https://github.com/user-attachments/assets/8a1f0bc4-07e1-45c7-97ed-8bc164f43a71#.png)
+
+```javascript
+(function execute(inputs, outputs) {
+    var role_sysid = gs.getProperty('x_hap_sr_flow.dynamic_approval_role');
+    var role_group = gs.getProperty('x_hap_sr_flow.dynamic_approval_group');
+
+
+    // Check that group has role. If not assign the role.
+    var grGroupRole = new GlideRecord('sys_group_has_role');
+    grGroupRole.addEncodedQuery('group='+role_group+'^role='+role_sysid);
+    grGroupRole.query();
+
+    if(!grGroupRole.next()){        
+        grGroupRole.initialize();
+        grGroupRole.group = role_group;
+        grGroupRole.role = role_sysid;
+        grGroupRole.insert();
+    }
+
+
+    // add users to specific group to grant the role.
+    var users = inputs.users.split(',');
+
+    for(var i=0; i<users.length; i++){
+        var grRole = new GlideRecord('sys_user_has_role');
+        grRole.addEncodedQuery('user='+users[i]+'^role='+role_sysid);
+        grRole.query();
+
+        if(!grRole.next()){
+            var grMem = new GlideRecord('sys_user_grmember');
+            grMem.initialize();
+            grMem.group = role_group;
+            grMem.user = users[i];
+            grMem.insert();
+        }
+    }
+})(inputs, outputs);
+```
 
 ## 13. Check the "Auto Approve" system property
 

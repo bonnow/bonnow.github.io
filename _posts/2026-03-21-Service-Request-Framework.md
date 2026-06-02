@@ -153,9 +153,9 @@ Instead of creating and maintaining separate flows for each catalog item, i want
 
 ## 5. Implementation Details
 - Workflow (<a href="https://bonnow.github.io/servicenow%20itsm/2026/03/21/Service-Request-Workflow.html"> Link </a>)
-- Table & Form
+- Table & Form (<a href="https://bonnow.github.io/servicenow%20itsm/2026/06/02/Service-Request-Table-Structure.html"> Link </a>)
 - System Properties (<a href="https://bonnow.github.io/servicenow%20itsm/2026/04/27/Service-Request-System-Properties.html"> Link </a>)
-- Etc
+- Etc (<a href="https://bonnow.github.io/servicenow%20itsm/2026/05/01/Service-Request-Framework-etc.html"> Link </a>)
 
 ## 6. Sample
 
@@ -258,9 +258,9 @@ Instead of creating and maintaining separate flows for each catalog item, I want
 ## 5. Implementation Details
 
 - Workflow (<a href="https://bonnow.github.io/servicenow%20itsm/2026/03/21/Service-Request-Workflow.html"> Link </a>)
-- Table & Form
+- Table & Form (<a href="https://bonnow.github.io/servicenow%20itsm/2026/06/02/Service-Request-Table-Structure.html"> Link </a>)
 - System Properties (<a href="https://bonnow.github.io/servicenow%20itsm/2026/04/27/Service-Request-System-Properties.html"> Link </a>)
-- Etc
+- Etc (<a href="https://bonnow.github.io/servicenow%20itsm/2026/05/01/Service-Request-Framework-etc.html"> Link </a>)
 
 ## 6. Sample
 

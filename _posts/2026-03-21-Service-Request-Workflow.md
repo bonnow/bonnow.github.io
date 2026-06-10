@@ -864,7 +864,7 @@ answer = typeEvent(current, workflow);
 ```javascript
 function extractTextFromHTML(html) {
     // 1. Remove <style>, <script>, and comments
-    html = html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '').replace(/<!--[\s\S]*?-->/g, '');
+    html = html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '').replace(/<[^>]+>/g, '');
 
     // 2. Replace <br>, </p>, </div>, </tr> with newlines
     html = html.replace(/<(br|\/p|\/div|\/tr)>/gi, '\n');
@@ -885,9 +885,17 @@ function extractTextFromHTML(html) {
     return html;
 }
 
-(function(current, workflow) {
+;(function(current, workflow) {
     current.short_description = workflow.scratchpad.now.short_desc;
-    current.description = extractTextFromHTML(workflow.scratchpad.now.desc);
+    
+    var descType = current.getElement('description').getED().getInternalType();
+    
+    if (descType == 'html' || descType == 'translated_html') {
+        current.description = workflow.scratchpad.now.desc;
+    } else {
+        current.description = extractTextFromHTML(workflow.scratchpad.now.desc);
+    }
+    
     current.assignment_group = workflow.scratchpad.now.groups;
     if (workflow.scratchpad.now.primary_worker != '') {
         current.assigned_to = workflow.scratchpad.now.primary_worker;
@@ -1862,7 +1870,7 @@ answer = typeEvent(current, workflow);
 ```javascript
 function extractTextFromHTML(html) {
     // 1. Remove <style>, <script>, and comments
-    html = html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '').replace(/<!--[\s\S]*?-->/g, '');
+    html = html.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '').replace(/<[^>]+>/g, '');
 
     // 2. Replace <br>, </p>, </div>, </tr> with newlines
     html = html.replace(/<(br|\/p|\/div|\/tr)>/gi, '\n');
@@ -1883,9 +1891,17 @@ function extractTextFromHTML(html) {
     return html;
 }
 
-(function(current, workflow) {
+;(function(current, workflow) {
     current.short_description = workflow.scratchpad.now.short_desc;
-    current.description = extractTextFromHTML(workflow.scratchpad.now.desc);
+    
+    var descType = current.getElement('description').getED().getInternalType();
+    
+    if (descType == 'html' || descType == 'translated_html') {
+        current.description = workflow.scratchpad.now.desc;
+    } else {
+        current.description = extractTextFromHTML(workflow.scratchpad.now.desc);
+    }
+    
     current.assignment_group = workflow.scratchpad.now.groups;
     if (workflow.scratchpad.now.primary_worker != '') {
         current.assigned_to = workflow.scratchpad.now.primary_worker;
